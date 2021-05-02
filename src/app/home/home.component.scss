@@ -1,0 +1,48 @@
+.jumbotron {
+  min-height: 600px;
+  background-color: lightgreen;
+  color: darkgreen;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  line-height: 1.2em;
+}
+
+h1.medium {
+  font-size: 3em;
+}
+
+h1.thick {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+p.medium {
+  font-size: 2.3em;
+}
+
+.highlight {
+  color: darkgreen;
+}
+
+.xs-jumbotron {
+  min-height: 750px;
+  background-color: lightgreen;
+  color: darkgreen;
+}
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel img {
+  display: block;
+  height: 200px;
+}
+
+@media screen and ( min-width: 768px ) {
+  .carousel img {
+    height: 400px;
+  }
+}

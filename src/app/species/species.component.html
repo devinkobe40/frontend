@@ -1,0 +1,52 @@
+<div *ngIf="!results">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="container">
+
+<span id="moveTop"></span>
+
+<p *ngIf="current_page">
+  Page {{current_page}} of {{last_page}}
+</p>
+
+<p *ngIf="!current_page">
+  Page 1 of {{last_page}}
+</p>
+
+<div fxLayout="row wrap" fxLayoutGap="16px grid" >
+
+  <div fxFlex="25%" fxFlex.xs="100%" fxFlex.lt-sm="50%" fxFlex.sm="33%" *ngFor="let result of results.data">
+    <mat-card [@show] class="hover01 column" routerLink="/plant/{{result.id}}">
+        <img mat-card-image src="{{result.image_url}}" alt="{{result.common_name}}" width="300" height="350">
+    </mat-card>
+  </div>
+
+
+  </div>
+
+  <!-- [pageSizeOptions]="[5, 10, 25, 100]"> -->
+    <div *ngIf="results">
+      <p class="medium center">
+          <!-- <small style="color: gray;">Number of items: {{results.data.length}}
+          </small> -->
+
+          <button mat-button color="accent"
+          [disabled]="!results.links.prev"
+          (click)="previousPage(results.links.prev)">
+            <span><div>
+              <fa-icon [icon]="chevronLeft" size="2x"></fa-icon>
+              <fa-icon [icon]="chevronLeft" size="2x"></fa-icon>
+            </div></span>
+          </button>
+
+          <button mat-button color="accent"
+          (click)="nextPage(results.links.next)">
+            <span><div>
+              <fa-icon [icon]="chevronRight" size="2x"></fa-icon>
+              <fa-icon [icon]="chevronRight" size="2x"></fa-icon>
+            </div></span>
+          </button>
+      </p>
+    </div>
+
+</div>

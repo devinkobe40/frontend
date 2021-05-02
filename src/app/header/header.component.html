@@ -1,0 +1,59 @@
+<div fxFlex>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row  fxFlex="100%"
+     fxFlex.xs="100%" fxFlex.sm="100%">
+      <button (click)="sidenav.toggle()"
+              mat-icon-button  fxHide.gt-sm fxShow>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1><a mat-button routerLink="home"><fa-icon [icon]="faLeaf">
+      </fa-icon> Philippine Plants</a></h1>
+      <span class="menu-spacer"
+
+      ></span>
+      <div fxLayout="row"
+           fxLayoutGap="20px"
+           fxShow.gt-sm fxHide>
+        <a mat-button> Browse </a>
+        <a mat-button routerLink="species"> Species </a>
+        <a mat-button> Guides </a>
+        <a mat-button> Notes </a>
+
+      </div>
+      <span class="spacer"></span>
+      <div fxLayout="row">
+        <a mat-button (click)="openLoginForm()"><fa-icon [icon]="faSignIn"></fa-icon> Log In</a>
+      </div>
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav class="mat-app-background">
+      <mat-nav-list fxLayout="column"
+           fxLayoutGap="5px">
+
+        <a mat-list-item > Browse </a>
+        <a mat-list-item routerLink="species"> Species </a>
+        <a mat-list-item > Guides </a>
+        <a mat-list-item > Notes </a>
+        <a mat-list-item (click)="sidenav.toggle()" mat-list-item>
+          <fa-icon
+          [icon]="faTimesCircleReg" size="lg">
+        </fa-icon>
+        <span> Exit</span></a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;" fxFlex>
+        <!-- <a class="twitter-timeline container" href="https://twitter.com/richvolter15?ref_src=twsrc%5Etfw">
+          Tweets by richvolter15</a> -->
+        <router-outlet></router-outlet>
+
+        <app-footer></app-footer>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

@@ -1,0 +1,134 @@
+<div class="container">
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+          <div fxFlex="50%" fxFlex.xs="100%" fxFlex.md="100%" fxFlex.sm="100%" >
+
+          <img src="{{plant.data.images.fruit[0].image_url}}" alt="{{plant.data.common_name}}">
+        </div>
+        <div fxFlex="50%" fxFlex.xs="100%" fxFlex.md="100%" fxFlex.sm="100%" >
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+          <section>
+            <h1>Growth:</h1>
+            <div class="tab" fxLayoutGap="16px grid">
+              <div fxFlex>
+                <p>Atmospheric Humidity: {{plant.data.growth.atmospheric_humidity}}
+                  <mat-progress-bar mode="determinate" [value]="(plant.data.growth.atmospheric_humidity * 100) / 10"></mat-progress-bar>
+
+                </p>
+                <p>Bloom Months: {{plant.data.growth.bloom_months}}</p>
+                <p>Days to Harvest: {{plant.data.growth.days_to_harvest}}</p>
+                <p>Description: {{plant.data.growth.description}}</p>
+                <p>Fruit Months: {{plant.data.growth.fruit_months}}</p>
+                <p>Growth Months: {{plant.data.growth.growth_months}}</p>
+                <p>Light: {{plant.data.growth.light}}
+                    <mat-progress-bar mode="determinate" [value]="(plant.data.growth.light * 100) / 10"></mat-progress-bar>
+
+                </p>
+                <p>Sowing: {{plant.data.growth.sowing}}</p>
+              </div>
+              <div fxFlex>
+                <p>PH Maximum: {{plant.data.growth.ph_maximum}}
+                    <mat-progress-bar mode="determinate" [value]="(plant.data.growth.ph_maximum * 100) / 10"></mat-progress-bar>
+
+                </p>
+                <p>PH Minimum: {{plant.data.growth.ph_minimum}}
+                    <mat-progress-bar mode="determinate" [value]="(plant.data.growth.ph_minimum * 100) / 10"></mat-progress-bar>
+
+                </p>
+                <p>Row Spacing: {{plant.data.growth.row_spacing.cm}}</p>
+                <p>Soil Humidity: {{plant.data.growth.soil_humidity}}
+                    <mat-progress-bar mode="determinate" [value]="(plant.data.growth.soil_humidity * 100) / 10"></mat-progress-bar>
+
+                </p>
+                <p>Soil Nutrients: {{plant.data.growth.soil_nutriments}}
+                    <mat-progress-bar mode="determinate" [value]="(plant.data.growth.soil_nutriments * 100) / 10"></mat-progress-bar>
+
+                </p>
+                <p>Soil Salinity: {{plant.data.growth.soil_salinity}}
+                    <mat-progress-bar mode="determinate" [value]="(plant.data.growth.soil_salinity * 100) / 10"></mat-progress-bar>
+
+                </p>
+                <p>Soil Texture: {{plant.data.growth.soil_texture}}
+                    <mat-progress-bar mode="determinate" [value]="(plant.data.growth.soil_texture * 100) / 10"></mat-progress-bar>
+
+                </p>
+                <p>Spread: {{plant.data.growth.spread.cm}}</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </div>
+        <section>
+          <h1>Flowers: </h1>
+          <div>
+            <div fxLayout="row wrap" fxLayoutGap="16px grid">
+              <div fxFlex="25%" fxFlex.sm="30%" fxFlex.lt-sm="50%" *ngFor="let flower of plant.data.images.flower">
+                <img class="border" src="{{flower.image_url}}" alt="" height="300">
+
+                <blockquote cite="http://">
+                  {{flower.copyright}}
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <h1>Fruits: </h1>
+          <div>
+            <div fxLayout="row wrap" fxLayoutGap="16px grid">
+              <div fxFlex="25%" fxFlex.sm="30%" fxFlex.lt-sm="50%" *ngFor="let fruit of plant.data.images.fruit">
+                <img class="border" src="{{fruit.image_url}}" alt="" height="300">
+
+                <blockquote cite="http://">
+                  {{fruit.copyright}}
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+            <h1>Discovered: </h1>
+
+            <div class="tab">
+              <p>{{plant.data.year}}</p>
+            </div>
+
+            <h1>Name: </h1>
+
+            <div class="tab">
+              <p>{{plant.data.common_name}}</p>
+            </div>
+
+            <h1>Author: </h1>
+            <div class="tab">
+              <p>{{plant.data.author}}</p>
+            </div>
+
+            <h1>Family: </h1>
+            <div class="tab">
+              <p>{{plant.data.family}}</p>
+            </div>
+
+            <h1>Edible: </h1>
+            <div class="tab">
+              <p>{{plant.data.edible}}</p>
+            </div>
+
+            <h1>Genus: </h1>
+            <div class="tab">
+              <p>{{plant.data.genus}}</p>
+            </div>
+
+            <h1>Scientific Name: </h1>
+            <div class="tab">
+              <p>{{plant.data.scientific_name}}</p>
+            </div>
+
+            <h1>Observations: </h1>
+            <div class="tab">
+              <p>{{plant.data.observations}}</p>
+            </div>
+
+        </section>
+
+</div>
